@@ -78,6 +78,9 @@ $route = baseRoute($route, "wiki", "Wikis");
 // Items
 $route = baseRoute($route, "items", "Items");
 
+// Item Prices
+$route = baseRoute($route, "item_prices", "ItemPrices");
+
 
 // Base CRUD
 function baseRoute($route, $path, $controller) {	

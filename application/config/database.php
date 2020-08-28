@@ -73,34 +73,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-// $db['default'] = array(
-// 	'dsn'	=> '',
-// 	'hostname' => 'localhost',
-// 	'username' => 'root',
-// 	'password' => '',
-// 	'database' => 'lifeafter',
-// 	'dbdriver' => 'mysqli',
-// 	'dbprefix' => '',
-// 	'pconnect' => FALSE,
-// 	'db_debug' => (ENVIRONMENT !== 'production'),
-// 	'cache_on' => FALSE,
-// 	'cachedir' => '',
-// 	'char_set' => 'utf8',
-// 	'dbcollat' => 'utf8_general_ci',
-// 	'swap_pre' => '',
-// 	'encrypt' => FALSE,
-// 	'compress' => FALSE,
-// 	'stricton' => FALSE,
-// 	'failover' => array(),
-// 	'save_queries' => TRUE
-// );
-
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'us-cdbr-east-02.cleardb.com',
-	'username' => 'b36b66215dae84',
-	'password' => 'da4a90e2',
-	'database' => 'heroku_e2e47d697eb9f2a',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'lifeafter',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -116,3 +94,25 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+// $db['default'] = array(
+// 	'dsn'	=> '',
+// 	'hostname' => 'us-cdbr-east-02.cleardb.com',
+// 	'username' => 'b36b66215dae84',
+// 	'password' => 'da4a90e2',
+// 	'database' => 'heroku_e2e47d697eb9f2a',
+// 	'dbdriver' => 'mysqli',
+// 	'dbprefix' => '',
+// 	'pconnect' => FALSE,
+// 	'db_debug' => (ENVIRONMENT !== 'production'),
+// 	'cache_on' => FALSE,
+// 	'cachedir' => '',
+// 	'char_set' => 'utf8',
+// 	'dbcollat' => 'utf8_general_ci',
+// 	'swap_pre' => '',
+// 	'encrypt' => FALSE,
+// 	'compress' => FALSE,
+// 	'stricton' => FALSE,
+// 	'failover' => array(),
+// 	'save_queries' => TRUE
+// );

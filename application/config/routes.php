@@ -81,6 +81,9 @@ $route = baseRoute($route, "items", "Items");
 // Item Prices
 $route = baseRoute($route, "item_prices", "ItemPrices");
 
+// Recipes
+$route = baseRoute($route, "recipes", "Recipes");
+
 
 // Base CRUD
 function baseRoute($route, $path, $controller) {	

@@ -2,8 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Maps extends MY_Controller {
-	protected $success = true;
-	protected $message = '';
 	protected $title  = 'Maps';
 	protected $entity  = 'maps';
 	protected $model  = 'Maps_Model';

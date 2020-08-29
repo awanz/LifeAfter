@@ -41,6 +41,9 @@
             <ul class="nav side-menu">
               <li><a href="{{ base_url('wiki') }}"><i class="fa fa-laptop"></i> Wiki</a></li>
             </ul>
+            <ul class="nav side-menu">
+              <li><a href="{{ base_url('recipes') }}"><i class="fa fa-laptop"></i>Recipes</a></li>
+            </ul>
             <li><a><i class="fa fa-edit"></i> General <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="{{ base_url('maps') }}">Maps</a></li>

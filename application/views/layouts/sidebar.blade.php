@@ -58,7 +58,7 @@
 
       <!-- /menu footer buttons -->
       <div class="sidebar-footer hidden-small">
-        <a data-toggle="tooltip" data-placement="top" title="Settings">
+        <a data-toggle="tooltip" data-placement="top" title="Settings" href="{{ base_url('settings') }}">
           <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         </a>
         <a data-toggle="tooltip" data-placement="top" title="Contributor" href="{{ base_url('contributor') }}">

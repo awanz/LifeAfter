@@ -59,6 +59,8 @@ $route['login']['POST'] = 'auth/signin_post';
 $route['signup']['GET'] = 'auth/signup';
 $route['signup']['POST'] = 'auth/signup_post';
 $route['logout']['GET'] = 'auth/logout';
+$route['settings']['GET'] = 'settings';
+$route['settings/edit']['POST'] = 'settings/edit_post';
 
 // Dashboard
 $route['dashboard'] = 'dashboard';

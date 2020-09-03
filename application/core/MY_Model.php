@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class MY_Model extends CI_Model {
 
-    public function all()
+    private function all()
 	{
         $this->db->from($this->table);
         $this->db->order_by('id', 'desc');
@@ -10,13 +10,13 @@ class MY_Model extends CI_Model {
         return $data->result();
     }
     
-    public function find($id)
+    private function find($id)
 	{
         $data = $this->db->get_where($this->table, array('id' => $id));
         return $data->first_row();
     }
     
-    public function add($data)
+    private function add($data)
 	{
         $data['created_by'] = $this->session->userdata('user_data')['user_id'];
         $data['update_by'] = $this->session->userdata('user_data')['user_id'];
@@ -30,7 +30,7 @@ class MY_Model extends CI_Model {
         }
     }
     
-    public function edit($id, $data)
+    private function edit($id, $data)
 	{
         $data['created_by'] = $this->session->userdata('user_data')['user_id'];
         
@@ -44,7 +44,7 @@ class MY_Model extends CI_Model {
         }
     }
 
-    public function disable($id)
+    private function disable($id)
 	{
         $this->db->set('is_active', 0);
         $this->db->where('id', $id);
@@ -57,7 +57,7 @@ class MY_Model extends CI_Model {
         }
     }
 
-    public function enable($id)
+    private function enable($id)
 	{
         $this->db->set('is_active', 1);
         $this->db->where('id', $id);
@@ -70,7 +70,7 @@ class MY_Model extends CI_Model {
         }
     }
 
-    public function status($id, $status)
+    private function status($id, $status)
 	{
         $this->db->set('status', $status);
         $this->db->where('id', $id);

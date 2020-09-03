@@ -45,39 +45,37 @@ class Settings extends MY_Controller {
         return view($this->entity.'.index', $data);
     }
 
-    // public function edit_post() {
-    //     if ($this->input->post()) {
-    //         echo '<pre>';
-    //         print_r($_POST);
-    //         die();
-    //         foreach($this->input->post() as $key => $value){
-    //             $data[$key] = htmlspecialchars($value);
-    //         }
-    //         $result = $this->model()->edit($data);
-    //         if ($result) {
-    //             $this->session->set_flashdata(
-    //                 'alert_action', 
-    //                 '<div class="alert alert-success" role="alert">
-    //                     Edit data successful.
-    //                 </div>');
-    //                 redirect($this->uri->segment(1),'refresh');
-    //         }else{
-    //             $this->session->set_flashdata(
-    //                 'alert_action', 
-    //                 '<div class="alert alert-warning" role="alert">
-    //                     Edir data failed.
-    //                 </div>');
-    //                 redirect($this->uri->segment(1),'refresh');
-    //         }
+    public function update_post() {
+        if ($this->input->post()) {
+
+            foreach($this->input->post() as $key => $value){
+                $data[$key] = htmlspecialchars($value);
+            }
+            $result = $this->model()->edit($data);
+            if ($result) {
+                $this->session->set_flashdata(
+                    'alert_action', 
+                    '<div class="alert alert-success" role="alert">
+                        Edit data successful.
+                    </div>');
+                    redirect($this->uri->segment(1),'refresh');
+            }else{
+                $this->session->set_flashdata(
+                    'alert_action', 
+                    '<div class="alert alert-warning" role="alert">
+                        Edir data failed.
+                    </div>');
+                    redirect($this->uri->segment(1),'refresh');
+            }
             
-    //     }else{
-    //         $this->session->set_flashdata(
-    //             'alert_action', 
-    //             '<div class="alert alert-warning" role="alert">
-    //             Add data failed.
-    //             </div>');
-    //         redirect($this->uri->segment(1),'refresh');
-    //     }    
-    // }
+        }else{
+            $this->session->set_flashdata(
+                'alert_action', 
+                '<div class="alert alert-warning" role="alert">
+                Add data failed.
+                </div>');
+            redirect($this->uri->segment(1),'refresh');
+        }    
+    }
 	
 }

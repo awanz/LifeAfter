@@ -10,10 +10,10 @@ class Settings_Model extends MY_Model {
         return $data->result();
     }
 
-    public function edit($data)
+    public function edit($id, $data)
 	{
            
-        $this->db->where('code', '2w4n');
+        $this->db->where('code', $id);
         $this->db->update($this->table, $data);
         
         if ($this->db->affected_rows() > 0){

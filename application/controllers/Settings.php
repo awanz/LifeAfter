@@ -51,7 +51,7 @@ class Settings extends MY_Controller {
             foreach($this->input->post() as $key => $value){
                 $data[$key] = htmlspecialchars($value);
             }
-            $result = $this->model()->edit($data);
+            $result = $this->model()->edit("2w4n",$data);
             if ($result) {
                 $this->session->set_flashdata(
                     'alert_action', 

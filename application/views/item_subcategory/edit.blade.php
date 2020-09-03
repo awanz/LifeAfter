@@ -32,45 +32,23 @@ $CI =& get_instance();
         </div>
         <div class="x_content">
           <br />
-            {!! form_open($CI->uri->segment(1).'/add', array('class' => 'form-horizontal form-label-left')) !!}
+            {!! form_open($CI->uri->segment(1).'/'.$CI->uri->segment(2).'/edit', array('class' => 'form-horizontal form-label-left')) !!}
             <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Name<span class="required">*</span>
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Subcategory Name<span class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12">
+                <input autocomplete="off" value="{{ $dataset->subcategory_name }}" type="text" id="subcategory_name" name="subcategory_name" required="required" class="form-control col-md-7 col-xs-12">
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Category<span class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <select class="select-items col-md-6" name="category">
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AL">Alabama</option>
-                  <option value="WY">Wyoming</option>
+                <select class="select-items col-md-6" name="item_category_id">
+                  @foreach ($categories as $category)
+                  <option @if ($category->id == $dataset->item_category_id) selected @endif value="{{ $category->id }}">{{ $category->name }}</option>
+                  @endforeach
                 </select>
-                {{-- <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12"> --}}
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Zone<span class="required">*</span>
-              </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="zone" name="zone" required="required" class="form-control col-md-7 col-xs-12">
               </div>
             </div>
             <div class="ln_solid"></div>
@@ -78,7 +56,7 @@ $CI =& get_instance();
               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                 <a href="{{ base_url($CI->uri->segment(1)) }}"><button class="btn btn-default" type="button">Cancel</button></a>
                 <button class="btn btn-success" type="reset">Reset</button>
-                <button type="submit" class="btn btn-primary">Add</button>
+                <button type="submit" class="btn btn-primary">Update</button>
               </div>
             </div>
             {!! form_close() !!}

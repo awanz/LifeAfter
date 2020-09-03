@@ -11,7 +11,7 @@ class MY_Controller extends CI_Controller {
         }
 	}
 
-    private function model() {
+    public function model() {
         $modelName = $this->model;
 		return $this->$modelName;
 	}
@@ -102,12 +102,10 @@ class MY_Controller extends CI_Controller {
 
         $settings = SETTINGS;
 
-        $dataset = $this->model()->all();
         $data = [
             'title' =>  $this->title,
             'settings' =>  $settings,
-            'userdata' => dataSession(),
-            'dataset' => $dataset
+            'userdata' => dataSession()
         ];
 
 		return view($this->entity.'.add', $data);

@@ -68,6 +68,9 @@ $route['dashboard'] = 'dashboard';
 // Item Category
 $route = baseRoute($route, "item_category", "ItemCategory");
 
+// Item Subcategory
+$route = baseRoute($route, "item_subcategory", "ItemSubcategory");
+
 // Maps
 $route = baseRoute($route, "maps", "Maps");
 

@@ -33,6 +33,7 @@
             <li><a><i class="fa fa-edit"></i> Items <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="{{ base_url('item_category') }}">Item Categories</a></li>
+                <li><a href="{{ base_url('item_subcategory') }}">Item Subcategories</a></li>
                 <li><a href="{{ base_url('items') }}">Items</a></li>
                 <li><a href="{{ base_url('item_prices') }}">Item Prices</a></li>
               </ul>

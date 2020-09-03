@@ -18,9 +18,6 @@ class MY_Model extends CI_Model {
     
     public function add($data)
 	{
-        $data['created_by'] = $this->session->userdata('user_data')['user_id'];
-        $data['update_by'] = $this->session->userdata('user_data')['user_id'];
-
         $this->db->insert($this->table, $data);
         
         if ($this->db->affected_rows() > 0){
@@ -32,7 +29,7 @@ class MY_Model extends CI_Model {
     
     public function edit($id, $data)
 	{
-        $data['created_by'] = $this->session->userdata('user_data')['user_id'];
+        // $data['created_by'] = $this->session->userdata('user_data')['user_id'];
         
         $this->db->where('id', $id);
         $this->db->update($this->table, $data);

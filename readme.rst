@@ -73,7 +73,7 @@ contributors to the CodeIgniter project and you, the CodeIgniter user.
 Installation
 ***************
 
-git clone https://github.com/awanz/ci3-gentelella.git
+git clone https://github.com/awanz/lifeafter.git
 
 composer update
 

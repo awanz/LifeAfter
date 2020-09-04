@@ -11,5 +11,4 @@ class ItemCategory extends MY_Controller {
 		parent::__construct();
 		$this->load->model('ItemCategory_Model');
 	}
-	
 }

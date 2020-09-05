@@ -53,6 +53,7 @@ $CI =& get_instance();
                     $no = 1;
                 @endphp
                 @foreach ($dataset as $data)
+
                 <tr>
                     <td>{{ $no }}</td>
                     <td>{{ $data->name }}</td>
@@ -66,6 +67,7 @@ $CI =& get_instance();
                         @endif
                     </td>
                 </tr>
+                
                 @php
                     $no++;
                 @endphp

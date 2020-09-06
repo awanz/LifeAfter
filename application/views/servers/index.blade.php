@@ -55,6 +55,7 @@ $CI =& get_instance();
                 @foreach ($dataset as $data)
 
                 <tr>
+                  
                     <td>{{ $no }}</td>
                     <td>{{ $data->name }}</td>
                     <td>{{ $data->zone }}</td>
@@ -66,6 +67,7 @@ $CI =& get_instance();
                         <a href="{{ base_url($CI->uri->segment(1).'/'.$data->id.'/enable') }}"><button type="button" class="btn btn-info">Enable</button></a>
                         @endif
                     </td>
+
                 </tr>
                 
                 @php

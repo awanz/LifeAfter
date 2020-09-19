@@ -36,6 +36,7 @@
                 <li><a href="{{ base_url('item_subcategory') }}">Item Subcategories</a></li>
                 <li><a href="{{ base_url('items') }}">Items</a></li>
                 <li><a href="{{ base_url('item_prices') }}">Item Prices</a></li>
+                <li><a href="{{ base_url('item_raws') }}">Item Raws</a></li>
               </ul>
             </li>
             

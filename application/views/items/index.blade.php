@@ -44,7 +44,7 @@ $CI =& get_instance();
                 <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Category</th>
+                    <th>Subcategory</th>
                     <th>Action</th>
                 </tr>
               </thead>

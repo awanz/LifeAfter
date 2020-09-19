@@ -6,7 +6,7 @@ class ItemSubcategory_Model extends MY_Model {
 
 	public function all()
 	{
-		$this->db->select('a.id, b.name as category_name , a.subcategory_name, a.is_active');
+		$this->db->select('a.id, b.name as category_name , a.name, a.is_active');
 		$this->db->from($this->table . " a");
 		$this->db->join('item_categories b', 'b.id = a.item_category_id');
 		

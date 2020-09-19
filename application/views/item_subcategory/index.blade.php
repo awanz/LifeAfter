@@ -56,7 +56,7 @@ $CI =& get_instance();
                 <tr>
                     <td>{{ $no }}</td>
                     <td>{{ $data->category_name }}</td>
-                    <td>{{ $data->subcategory_name }}</td>
+                    <td>{{ $data->name }}</td>
                     <td>
                         <a href="{{ base_url($CI->uri->segment(1).'/'.$data->id.'/edit') }}"><button type="button" class="btn btn-success">Edit</button></a>
                         @if ($data->is_active == 1)

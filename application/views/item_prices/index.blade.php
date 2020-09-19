@@ -42,46 +42,28 @@ $CI =& get_instance();
             <table id="datatable" class="table table-striped table-bordered">
               <thead>
                 <tr>
-                    <th>#</th>
-                    @foreach (array_keys(get_object_vars($dataset[0])) as $titleTable)
-                    <?php
-                        if ($titleTable == 'id' || $titleTable == 'is_active' || $titleTable == 'created_at' || $titleTable == 'created_by' || $titleTable == 'update_at' || $titleTable == 'update_by') {
-                            continue;
-                        }
-                    ?>
-                    <th>{{ ucwords(str_replace("_", " ", $titleTable)) }}</th>
-                    <th>Action</th>
-                    @endforeach
+                  <th>#</th>
+                  <th>Item Name</th>
+                  <th>Price</th>
+                  <th>Date</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 @php
                     $no = 1;
-                    $isActive = 1;
                 @endphp
                 @foreach ($dataset as $data)
                 <tr>
                     <td>{{ $no }}</td>
-                    @foreach (array_keys(get_object_vars($dataset[0])) as $titleTable)
-                    <?php
-                        if ($titleTable == 'id' || $titleTable == 'is_active' || $titleTable == 'created_at' || $titleTable == 'created_by' || $titleTable == 'update_at' || $titleTable == 'update_by') {
-                            if ($titleTable == 'is_active'){
-                                $isActive = $data->$titleTable;
-                            }
-                            if ($titleTable == 'id'){
-                                $id = $data->$titleTable;
-                            }
-                            continue;
-                        }
-                    ?>
-                        <td>{{ $data->$titleTable }}</td>
-                    @endforeach
+                    <td>{{ $data->category_name }}</td>
+                    <td>{{ $data->subcategory_name }}</td>
                     <td>
-                        <a href="{{ base_url($CI->uri->segment(1).'/'.$id.'/edit') }}"><button type="button" class="btn btn-success">Edit</button></a>
-                        @if ($isActive == 1)
-                        <a href="{{ base_url($CI->uri->segment(1).'/'.$id.'/disable') }}"><button type="button" class="btn btn-danger">Disable</button></a>
+                        <a href="{{ base_url($CI->uri->segment(1).'/'.$data->id.'/edit') }}"><button type="button" class="btn btn-success">Edit</button></a>
+                        @if ($data->is_active == 1)
+                        <a href="{{ base_url($CI->uri->segment(1).'/'.$data->id.'/disable') }}"><button type="button" class="btn btn-danger">Disable</button></a>
                         @else
-                        <a href="{{ base_url($CI->uri->segment(1).'/'.$id.'/enable') }}"><button type="button" class="btn btn-info">Enable</button></a>
+                        <a href="{{ base_url($CI->uri->segment(1).'/'.$data->id.'/enable') }}"><button type="button" class="btn btn-info">Enable</button></a>
                         @endif
                     </td>
                 </tr>

@@ -42,6 +42,7 @@ $CI =& get_instance();
           <table id="datatable" class="table table-striped table-bordered">
             <thead>
               <tr>
+                  <th>ID</th>
                   <th>Title</th>
                   <th>Action</th>
               </tr>
@@ -52,6 +53,7 @@ $CI =& get_instance();
               @endphp
               @foreach ($dataset as $data)
               <tr>
+                  <td>{{ $data->id }}</td>
                   <td>{{ $data->title }}</td>
                   <td style="width: 20%;">
                       <a href="{{ base_url($CI->uri->segment(1).'/'.$data->id.'/edit') }}"><button type="button" class="btn btn-success">Edit</button></a>

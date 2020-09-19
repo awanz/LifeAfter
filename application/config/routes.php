@@ -82,6 +82,8 @@ $route = baseRoute($route, "wiki", "Wikis");
 
 // Items
 $route = baseRoute($route, "items", "Items");
+$route['items/get-categories']['GET'] = 'items/getCategory';
+$route['items/get-subcategories/(:any)']['GET'] = 'items/getSubcategory/$1';
 
 // Item Prices
 $route = baseRoute($route, "item_prices", "ItemPrices");
